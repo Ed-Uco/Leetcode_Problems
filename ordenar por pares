@@ -1,0 +1,23 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+      let str = [];
+      let counter = 0;
+      ptr2 = ['()','{}','[]']
+      for (let i = 0; i < s.length; i +=2) {
+            str.push(s.slice(i,i+2))
+      }
+      for (let h = 0; h < str.length; h++) {
+            for (let l = 0; l < ptr2.length; l++) {
+              if (str[h] == ptr2[l]) {
+                    counter += 1;
+              }
+            }
+      }
+      if (counter == str.length) {
+            return true
+      }
+      return false
+};
